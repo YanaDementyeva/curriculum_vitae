@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daria Dementyeva · NLP Researcher</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #fafafa;
+            padding: 2rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ===== LANGUAGE SWITCHER ===== */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+        .lang-switch button {
+            background: none;
+            border: 2px solid #e1e4e8;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #586069;
+            transition: 0.2s;
+        }
+        .lang-switch button.active {
+            background: #0366d6;
+            border-color: #0366d6;
+            color: white;
+        }
+        .lang-switch button:hover:not(.active) {
+            background: #e1e4e8;
+        }
+        .lang-switch button:first-child { margin-right: 0.5rem; }
+
+        /* ===== LANGUAGE BLOCKS ===== */
+        .lang-block { display: none; }
+        .lang-block.active { display: block; }
+
+        /* ===== COMPONENTS ===== */
+        .header { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .avatar { width: 120px; height: 120px; border-radius: 50%; background: #e1e4e8; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #586069; flex-shrink: 0; }
+        .header-text h1 { font-size: 2.5rem; margin-bottom: 0.25rem; }
+        .header-text .sub { font-size: 1.2rem; color: #586069; }
+        .links { margin-top: 0.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+        .links a { font-size: 1.1rem; }
+
+        section { margin-bottom: 2.5rem; }
+        h2 { font-size: 1.8rem; border-bottom: 2px solid #e1e4e8; padding-bottom: 0.3rem; margin-bottom: 1rem; }
+
+        .badge { display: inline-block; background: #e1e4e8; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; margin: 0.2rem; }
+
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+        .card { background: white; padding: 1.2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e1e4e8; }
+        .card h3 { margin-bottom: 0.3rem; }
+        .card .meta { font-size: 0.9rem; color: #586069; }
+        .card .tags { margin-top: 0.5rem; }
+
+        .exp-item { margin-bottom: 1.2rem; }
+        .exp-item .title { font-weight: 600; }
+        .exp-item .date { color: #586069; font-size: 0.9rem; }
+        .exp-item ul { margin-left: 1.2rem; }
+
+        .pub-item { margin-bottom: 0.8rem; }
+
+        .footer { margin-top: 2rem; border-top: 1px solid #e1e4e8; padding-top: 1rem; text-align: center; color: #586069; font-size: 0.9rem; }
+
+        @media (max-width: 600px) {
+            .header { flex-direction: column; align-items: center; text-align: center; }
+            .lang-switch { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== LANGUAGE SWITCHER ===== -->
+<div class="lang-switch">
+    <button id="btn-en" class="active" onclick="switchLang('en')">🇬🇧 EN</button>
+    <button id="btn-ru" onclick="switchLang('ru')">🇷🇺 RU</button>
+</div>
+
+<!-- ============================================================ -->
+<!-- ==================== ENGLISH VERSION ======================== -->
+<!-- ============================================================ -->
+<div id="lang-en" class="lang-block active">
+
+    <!-- HERO -->
+    <div class="header">
+        <div class="avatar">👩‍🔬</div>
+        <div class="header-text">
+            <h1>Daria Dementyeva</h1>
+            <div class="sub">NLP Researcher &amp; ML Engineer</div>
+            <div class="links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Telegram</a>
+                <a href="#">Email</a>
+                <a href="#">Google Scholar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section>
+        <h2>About</h2>
+        <p>
+            I work on <strong>LLM optimization</strong> (quantization, pruning, distillation),
+            <strong>RAG systems</strong>, and <strong>information extraction</strong> from scientific texts.
+            My research spans model compression, trustworthy AI, and domain adaptation.
+            I also teach machine learning at Novosibirsk State University.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+        <h2>Skills</h2>
+        <div><strong>Languages:</strong> <span class="badge">Python</span> <span class="badge">C++</span> <span class="badge">SQL</span> <span class="badge">Clojure</span></div>
+        <div style="margin-top:0.3rem;"><strong>ML/NLP:</strong> <span class="badge">PyTorch</span> <span class="badge">Transformers</span> <span class="badge">vLLM</span> <span class="badge">LangChain</span> <span class="badge">RAG</span> <span class="badge">LoRA</span> <span class="badge">Quantization</span> <span class="badge">Distillation</span></div>
+        <div style="margin-top:0.3rem;"><strong>Tools:</strong> <span class="badge">Docker</span> <span class="badge">Git</span> <span class="badge">Linux</span> <span class="badge">Kaggle</span> <span class="badge">Colab</span></div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+        <h2>Experience</h2>
+        <div class="exp-item">
+            <div class="title">ML Teacher · SESC NSU</div>
+            <div class="date">2022 – present</div>
+            <ul><li>Designed ML curriculum for high school students</li><li>Supervised 5+ student research projects</li></ul>
+        </div>
+        <div class="exp-item">
+            <div class="title">Assistant · Faculty of Physics, NSU</div>
+            <div class="date">2026 – present</div>
+            <ul><li>Conducted seminars on ML, prepared lab work</li></ul>
+        </div>
+        <div class="exp-item">
+            <div class="title">Assistant · Faculty of Mathematics &amp; Mechanics, NSU</div>
+            <div class="date">2026 – present</div>
+            <ul><li>Created ML curriculum for bioinformatics students</li></ul>
+        </div>
+        <div class="exp-item">
+            <div class="title">Assistant · Institute of Intelligent Robotics, NSU</div>
+            <div class="date">2025 – present</div>
+            <ul><li>Supported NLP courses and student mentoring</li></ul>
+        </div>
+        <div class="exp-item">
+            <div class="title">Contract Teaching Assistant · IT Faculty, NSU</div>
+            <div class="date">2025 – present</div>
+            <ul><li>Delivered seminars on discrete mathematics</li></ul>
+        </div>
+        <div class="exp-item">
+            <div class="title">Laboratory Assistant · Advanced Engineering School, NSU</div>
+            <div class="date">2024 – 2025</div>
+            <ul><li>Developed data pipelines and visualization tools</li></ul>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="card">
+                <h3>TERMinator</h3>
+                <div class="meta">2023 · COLING Workshop</div>
+                <p>NLP pipeline for automatic scientific term extraction using transformer-based sequence labeling.</p>
+                <div class="tags"><span class="badge">Transformers</span><span class="badge">spaCy</span><span class="badge">PyTorch</span></div>
+                <a href="#">[Code]</a> <a href="#">[Paper]</a>
+            </div>
+            <div class="card">
+                <h3>RAGU</h3>
+                <div class="meta">2025–2026 · arXiv:2607.11683</div>
+                <p>Multi-step GraphRAG engine with compact domain-adapted LLM. Evaluated small LMs for retrieval and generation.</p>
+                <div class="tags"><span class="badge">RAG</span><span class="badge">vLLM</span><span class="badge">LangChain</span></div>
+                <a href="#">[Code]</a> <a href="#">[arXiv]</a>
+            </div>
+            <div class="card">
+                <h3>Reasoning Distillation</h3>
+                <div class="meta">2025 · Yandex Camp</div>
+                <p>Distilled reasoning capabilities from large to small LMs using prompt-based and supervised approaches.</p>
+                <div class="tags"><span class="badge">Knowledge Distillation</span><span class="badge">LLM</span></div>
+                <a href="#">[Code]</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section>
+        <h2>Publications</h2>
+        <div class="pub-item"><strong>RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM</strong><br>Dementyeva D., et al. · arXiv:2607.11683, 2026<br><a href="#">arXiv</a> · <a href="#">BibTeX</a></div>
+        <div class="pub-item"><strong>Conceptual Framework for Trustworthy AI: Combining LLMs with Formal Logic Systems</strong><br>Dementyeva D., et al. · MathAI Conference, 2025<br><a href="#">PDF</a> · <a href="#">BibTeX</a></div>
+        <div class="pub-item"><strong>TERMinator: A System for Scientific Texts Processing</strong><br>Dementyeva D., et al. · COLING Workshop, 2022 · <a href="#">Software &amp; Systems (12 citations)</a></div>
+    </section>
+
+    <!-- TALKS & AWARDS -->
+    <section>
+        <h2>Talks &amp; Awards</h2>
+        <ul>
+            <li>Poster at COLING 2022</li>
+            <li>Speaker at Data Fest Siberia (2022–2025)</li>
+            <li>Speaker at MathAI 2025, Sirius</li>
+            <li>🏆 Winner — [Hackathon Name, 2024]</li>
+            <li>🏆 Winner — [Hackathon Name, 2025]</li>
+        </ul>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section>
+        <h2>Languages</h2>
+        <ul>
+            <li><strong>English</strong> — Upper-Intermediate (B2) · technical writing &amp; presentations</li>
+            <li><strong>German</strong> — Intermediate (B1)</li>
+            <li><strong>French</strong> — Basic (A2)</li>
+            <li><strong>Russian</strong> — Native</li>
+        </ul>
+    </section>
+
+</div><!-- end lang-en -->
+
+
+<!-- ============================================================ -->
+<!-- ===================== RUSSIAN VERSION ======================= -->
+<!-- ============================================================ -->
+<div id="lang-ru" class="lang-block">
+
+    <!-- HERO -->
+    <div class="header">
+        <div class="avatar">👩‍🔬</div>
+        <div class="header-text">
+            <h1>Дарья Дементьева</h1>
+            <div class="sub">NLP-исследователь &amp; ML-инженер</div>
+            <div class="links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Telegram</a>
+                <a href="#">Email</a>
+                <a href="#">Google Scholar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section>
+        <h2>Обо мне</h2>
+        <p>
+            Занимаюсь <strong>оптимизацией LLM</strong> (квантование, прунинг, дистилляция),
+            <strong>RAG-системами</strong> и <strong>извлечением информации</strong> из научных текстов.
+            Мои исследования охватывают сжатие моделей, доверенный ИИ и адаптацию к предметным областям.
+            Также преподаю машинное обучение в Новосибирском государственном университете.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+        <h2>Навыки</h2>
+        <div><strong>Языки программирования:</strong> <span class="badge">Python</span> <span class="badge">C++</span> <span class="badge">SQL</span> <span class="badge">Clojure</span></div>
+        <div style="margin-top:0.3rem;"><strong>ML/NLP:</strong> <span class="badge">PyTorch</span> <span class="badge">Transformers</span> <span class="badge">vLLM</span> <span class="badge">LangChain</span> <span class="badge">RAG</span> <span class="badge">LoRA</span> <span class="badge">Квантование</span> <span class="badge">Дистилляция</span></div>
+        <div style="margin-top:0.3rem;"><strong>Инструменты:</strong> <span class="badge">Docker</span> <span class="badge">Git</span> <span class="badge">Linux</span> <span class="badge">Kaggle</span> <span class="badge">Colab</span></div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+        <h2>Опыт работы</h2>
+        <div class="exp-item">
+            <div class="title">Преподаватель ML · СУНЦ НГУ</div>
+            <div class="date">2022 – н.в.</div>
+            <ul><li>Разработал курс ML для школьников</li><li>Руководил 5+ исследовательскими проектами студентов</li></ul>
+        </div>
+        <div class="exp-item">
+            <div class="title">Ассистент · Физфак НГУ</div>
+            <div class="date">2026 – н.в.</div>
+            <ul><li>Проводил семинары по ML, готовил лабораторные работы</li></ul>
+        </div>
+        <div class="exp-item">
+            <div class="title">Ассистент · Мехмат НГУ / Математический центр</div>
+            <div class="date">2026 – н.в.</div>
+            <ul><li>Создал учебную программу по ML для биоинформатиков</li></ul>
+        </div>
+        <div class="exp-item">
+            <div class="title">Ассистент · Институт интеллектуальной робототехники НГУ</div>
+            <div class="date">2025 – н.в.</div>
+            <ul><li>Поддерживал курсы по NLP и наставничество студентов</li></ul>
+        </div>
+        <div class="exp-item">
+            <div class="title">Внешний преподаватель · ФИТ НГУ</div>
+            <div class="date">2025 – н.в.</div>
+            <ul><li>Вёл семинары по дискретной математике</li></ul>
+        </div>
+        <div class="exp-item">
+            <div class="title">Лаборант · Передовая инженерная школа НГУ</div>
+            <div class="date">2024 – 2025</div>
+            <ul><li>Разрабатывал пайплайны обработки данных и инструменты визуализации</li></ul>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+        <h2>Проекты</h2>
+        <div class="project-grid">
+            <div class="card">
+                <h3>TERMinator</h3>
+                <div class="meta">2023 · COLING Workshop</div>
+                <p>NLP-пайплайн для автоматического извлечения научных терминов с использованием трансформеров для разметки последовательностей.</p>
+                <div class="tags"><span class="badge">Transformers</span><span class="badge">spaCy</span><span class="badge">PyTorch</span></div>
+                <a href="#">[Код]</a> <a href="#">[Статья]</a>
+            </div>
+            <div class="card">
+                <h3>RAGU</h3>
+                <div class="meta">2025–2026 · arXiv:2607.11683</div>
+                <p>Многошаговый GraphRAG-движок с компактной доменно-адаптированной LLM. Сравнительная оценка малых языковых моделей.</p>
+                <div class="tags"><span class="badge">RAG</span><span class="badge">vLLM</span><span class="badge">LangChain</span></div>
+                <a href="#">[Код]</a> <a href="#">[arXiv]</a>
+            </div>
+            <div class="card">
+                <h3>Дистилляция рассуждений</h3>
+                <div class="meta">2025 · Yandex Camp</div>
+                <p>Дистилляция способности рассуждать от больших LLM к малым с использованием промптов и контролируемого обучения.</p>
+                <div class="tags"><span class="badge">Knowledge Distillation</span><span class="badge">LLM</span></div>
+                <a href="#">[Код]</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section>
+        <h2>Публикации</h2>
+        <div class="pub-item"><strong>RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM</strong><br>Дементьева Д. и др. · arXiv:2607.11683, 2026<br><a href="#">arXiv</a> · <a href="#">BibTeX</a></div>
+        <div class="pub-item"><strong>Conceptual Framework for Trustworthy AI: Combining LLMs with Formal Logic Systems</strong><br>Дементьева Д. и др. · MathAI Conference, 2025<br><a href="#">PDF</a> · <a href="#">BibTeX</a></div>
+        <div class="pub-item"><strong>TERMinator: A System for Scientific Texts Processing</strong><br>Дементьева Д. и др. · COLING Workshop, 2022 · <a href="#">Software &amp; Systems (12 цитирований)</a></div>
+    </section>
+
+    <!-- TALKS & AWARDS -->
+    <section>
+        <h2>Выступления и достижения</h2>
+        <ul>
+            <li>Постер на COLING 2022</li>
+            <li>Докладчик на Data Fest Siberia (2022–2025)</li>
+            <li>Докладчик на MathAI 2025, Сириус</li>
+            <li>🏆 Победитель — [Название хакатона, 2024]</li>
+            <li>🏆 Победитель — [Название хакатона, 2025]</li>
+        </ul>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section>
+        <h2>Языки</h2>
+        <ul>
+            <li><strong>Английский</strong> — Upper-Intermediate (B2) · техническое письмо и презентации</li>
+            <li><strong>Немецкий</strong> — Intermediate (B1)</li>
+            <li><strong>Французский</strong> — Basic (A2)</li>
+            <li><strong>Русский</strong> — Родной</li>
+        </ul>
+    </section>
+
+</div><!-- end lang-ru -->
+
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+    &copy; 2026 Daria Dementyeva · Built with ❤️ on GitHub Pages
+</div>
+
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+    function switchLang(lang) {
+        // скрыть все блоки
+        document.querySelectorAll('.lang-block').forEach(el => el.classList.remove('active'));
+        // показать нужный
+        document.getElementById('lang-' + lang).classList.add('active');
+        // обновить кнопки
+        document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('btn-' + lang).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
