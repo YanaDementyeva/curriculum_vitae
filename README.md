@@ -1,15 +1,6 @@
 # curriculum_vitae
 Resume for sharing via permanent link. Last updated: Summer 2026.
 
----
-layout: single
-title: "Curriculum Vitae"
-permalink: /cv/
-author_profile: true
-redirect_from:
-  - /resume
----
-
 ## About
 
 I work on **LLM optimization** (quantization, pruning, distillation), **RAG systems**, and **information extraction** from scientific texts. My research spans model compression, trustworthy AI, and domain adaptation. I also teach machine learning at Novosibirsk State University.
